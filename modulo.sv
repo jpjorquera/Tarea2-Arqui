@@ -26,6 +26,7 @@ module circuito(input logic clk,
 	logic f;
 	and2(b, c, d);
 	medio(a, b, c, x, e)
+	assign f = x;
 	and2(b, c, y)
 	flop(clk, d, a)
 	flop(clk, e, b)

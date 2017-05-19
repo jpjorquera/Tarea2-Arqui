@@ -62,6 +62,7 @@ Cristian Navarrete 201573549-2\\
 \begin{document}
 \setcounter{secnumdepth}{0}
 \maketitle
+\section{Circuito}
 Se busca realizar el circuito con las características requeridas, para ello en primer lugar realizamos el diagrama de estados correspondiente.
 
 Se agregó en la etiqueta la parte de las secuencias que se va cumpliendo en cada estado (dígitos finales) para tener una mejor visualización.
@@ -155,6 +156,11 @@ Obteniendo así las siguientes funciones:
 	\item{$F = X$}
 	\item{$Y  = BC$}
 \end{itemize}
+
+Finalmente se construye el circuito con las funciones obtenidas, usando flip-flop tipo D donde corresponda.
+
+\section{Módulo HDL}
+Para ello se realizaron tres funciones, una que hace el flip-flop d y dos para cada función lógica compuesta donde simplemente se obtienen las variables $D$, $E$ y la salida $Y$, según las funciones obtenidas anteriormente. Luego, haciendo uso de dichas funciones, se genera el circuito completo, haciendo uso las variables faltantes como lo son la entrada $X$ y el dígito $F$. Cabe destacar que al acualizar los parámetros, también se actualizan las variables que dependen de ellas, por lo que no es necesario realizar iteraciones, ya que con los flip-flops se realizan los cambios necesarios.
 
 \vspace{0.2cm}
 \section{Extra}
