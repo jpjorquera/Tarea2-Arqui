@@ -63,7 +63,6 @@ Cristian Navarrete 201573549-2\\
 \setcounter{secnumdepth}{0}
 \maketitle
 Se busca realizar el circuito con las características requeridas, para ello en primer lugar realizamos el diagrama de estados correspondiente.
-\section{Diagrama de Estados}
 
 Se agregó en la etiqueta la parte de las secuencias que se va cumpliendo en cada estado (dígitos finales) para tener una mejor visualización.
 \begin{center}
@@ -88,6 +87,7 @@ Luego se enumeró arbitrariamente cada estado, como se muestra a continuación:
 \end{table}
 
 \newpage
+Finalmente, con la enumeración de estados, se generó  la tabla de transición y de salida con la que se va a trabajar más adelante.
 \begin{table}[h]
 \centering
 \caption{Tabla de Transición y Salida}
@@ -96,7 +96,7 @@ Luego se enumeró arbitrariamente cada estado, como se muestra a continuación:
 \begin{tabular}{|l|c|c|c|c||l|c|c|c|c|}
 \hline
 \multicolumn{4}{|c|}{Estado}   & Input & \multicolumn{4}{l|}{Siguiente Estado} & Output \\ \hline
-No.                & A & B & C &       & No.       & D       & E      & F      &        \\ \hline
+No.                & A & B & C & X      & No.       & D       & E      & F      &  Y      \\ \hline
 \multirow{2}{*}{0} & 0 & 0 & 0 & 0     & 0         & 0       & 0      & 0      & 0      \\ \cline{2-10} 
                    & 0 & 0 & 0 & 1     & 1         & 0       & 0      & 1      & 0      \\ \hline
 \multirow{2}{*}{1} & 0 & 0 & 1 & 0     & 2         & 0       & 1      & 0      & 0      \\ \cline{2-10} 
@@ -115,18 +115,17 @@ No.                & A & B & C &       & No.       & D       & E      & F      &
                    & 1 & 1 & 1 & 1     &           & X       & X      & X      & X      \\ \hline
 \end{tabular}
 \end{table}
-\newpage
 
+A continuación se realizan los mapas de Karnaugh para cada salida correspondiente, usando la notación incluida en la tabla anterior.
 
 \vspace{0.2cm}
-\askmap{4}{$d_2$}{{$D_3$}{$D_2$}{$D_1$}{$D_0$}}%
-{0011110000111100}%
+\begin{center}
+\askmap{4}{$D$}{{$A$}{$B$}{$C$}{$X$}}%
+{000000110000XXXX}%
 {%
-\put(0,1){\oval(1.9,1.9)[r]}
-\put(4,1){\oval(1.9,1.9)[l]}
-\put(2,3){\oval(1.9,1.9)}
+\put(2,1){\oval(1.9,1.9)}
 }
-\askmap{4}{$d_3$}{{$D_3$}{$D_2$}{$D_1$}{$D_0$}}%
+\askmap{4}{$E$}{{$A$}{$B$}{$C$}{$X$}}%
 {0000001111111100}%
 {%
 \put(1.5,1){\oval(0.9,1.9)}
@@ -134,8 +133,23 @@ No.                & A & B & C &       & No.       & D       & E      & F      &
 \put(3,3){\oval(1.9,1.9)}
 }
 
-\vspace{0.2cm}
+\askmap{4}{$F$}{{$A$}{$B$}{$C$}{$X$}}%
+{0000001111111100}%
+{%
+\put(1.5,1){\oval(0.9,1.9)}
+\put(3.5,2){\oval(0.8,3.9)}
+\put(3,3){\oval(1.9,1.9)}
+}\askmap{4}{$Y$}{{$A$}{$B$}{$C$}{$X$}}%
+{0000001111111100}%
+{%
+\put(1.5,1){\oval(0.9,1.9)}
+\put(3.5,2){\oval(0.8,3.9)}
+\put(3,3){\oval(1.9,1.9)}
+}
+\end{center}
 
+\vspace{0.2cm}
+\newpage
 Entonces las funciones son respectivamente: $d_2 = D_2\overline{D_1}+\overline{D_2}D_1$ y $d_3 = D_3\overline{D_1}+\overline{D_3}D_2D_1+D_3\overline{D_2}$.
 \vspace{0.2cm}
 
