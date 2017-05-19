@@ -144,65 +144,15 @@ A continuación se realizan los mapas de Karnaugh para cada salida correspondien
 \put(2,1){\oval(1.8,1.8)}
 }
 \end{center}
-
-\vspace{0.2cm}
-\newpage
-Entonces las funciones son respectivamente: $d_2 = D_2\overline{D_1}+\overline{D_2}D_1$ y $d_3 = D_3\overline{D_1}+\overline{D_3}D_2D_1+D_3\overline{D_2}$.
 \vspace{0.2cm}
 
+Obteniendo así las siguientes funciones:
 \begin{itemize}
-	\item{$d_0 = D_0$}
-	\item{$d_1 = D_1$}
-	\item{$d_2 = \overline{D_2}$}
+	\item{$D = BC$}
+	\item{$E = \overline{B}C\overline{X} + A\overline{C}X + B\overline{C}X$}
+	\item{$F = X$}
+	\item{$Y  = BC$}
 \end{itemize}
-Y para $d_3$ realizamos el mapa Karnaugh.
-\begin{center}
-\subsection{Mapa de Karnaugh para $d_3$}
-\vspace{0.2cm}
-\askmap{4}{$d_3$}{{$D_3$}{$D_2$}{$D_1$}{$D_0$}}%
-{0000111111110000}%
-{%
-\put(1.5,2){\oval(0.8,3.9)}
-\put(3.5,2){\oval(0.8,3.9)}
-}
-\end{center}
-
-Luego $d_0 = \overline{D_0}$ y usamos Karnaugh para minimizar el resto:
-\begin{center}
-\subsection{Mapas de Karnaugh para $d_1$, $d_2$ y $d_3$}
-\vspace{0.2cm}
-\askmap{4}{$d_1$}{{$D_3$}{$D_2$}{$D_1$}{$D_0$}}%
-{0110011001100110}%
-{%
-\put(2,2.5){\oval(3.9,0.8)}
-\put(2,0.5){\oval(3.9,0.8)}
-}
-\askmap{4}{$d_2$}{{$D_3$}{$D_2$}{$D_1$}{$D_0$}}%
-{1110000111100001}%
-{%
-\put(2,1.5){\oval(1.9,0.8)}
-\put(0,3){\oval(1.9,1.9)[r]}
-\put(4,3){\oval(1.9,1.9)[l]}
-\put(4,0){\oval(1.8,1.8)[tl]}
-\put(0,0){\oval(1.8,1.8)[tr]}
-\put(4,4){\oval(1.8,1.8)[bl]}
-\put(0,4){\oval(1.8,1.8)[br]}
-}
-\end{center}
-\vspace{0.1cm}
-\begin{center}
-\askmap{4}{$d_3$}{{$D_3$}{$D_2$}{$D_1$}{$D_0$}}%
-{0001111111100000}%
-{%
-\put(1,1.5){\oval(1.9,0.8)}
-\put(1.5,2){\oval(0.8,3.9)}
-\put(3.5,3){\oval(0.8,1.9)}
-\put(4,0){\oval(1.8,1.8)[tl]}
-\put(4,4){\oval(1.8,1.8)[bl]}
-}
-\end{center}
-
-
 
 \vspace{0.2cm}
 \section{Extra}
