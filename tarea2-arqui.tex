@@ -61,8 +61,16 @@ Cristian Navarrete 201573549-2\\
 \begin{document}
 \setcounter{secnumdepth}{0}
 \maketitle
-\section{Codificación por `2'}
-\subsection{Mapas de Karnaugh para $d_2$ y $d_3$}
+Se busca realizar el circuito con las características requeridas, para ello en primer lugar realizamos el diagrama de estados correspondiente.
+\section{Diagrama de Estados}
+\begin{center}
+\includegraphics[width=15cm]{diag-estados.png}
+\end{center}
+
+
+
+
+
 \vspace{0.2cm}
 \askmap{4}{$d_2$}{{$D_3$}{$D_2$}{$D_1$}{$D_0$}}%
 {0011110000111100}%
@@ -78,7 +86,7 @@ Cristian Navarrete 201573549-2\\
 \put(3.5,2){\oval(0.8,3.9)}
 \put(3,3){\oval(1.9,1.9)}
 }
-\end{center}
+
 \vspace{0.2cm}
 
 Entonces las funciones son respectivamente: $d_2 = D_2\overline{D_1}+\overline{D_2}D_1$ y $d_3 = D_3\overline{D_1}+\overline{D_3}D_2D_1+D_3\overline{D_2}$.
