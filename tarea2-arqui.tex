@@ -158,13 +158,37 @@ Obteniendo así las siguientes funciones:
 \end{itemize}
 
 Finalmente se construye el circuito con las funciones obtenidas, usando flip-flop tipo D donde corresponda.
+\vspace{0.2cm}
 
 \section{Módulo HDL}
 Para ello se realizaron tres funciones, una que hace el flip-flop d y dos para cada función lógica compuesta donde simplemente se obtienen las variables $D$, $E$ y la salida $Y$, según las funciones obtenidas anteriormente. Luego, haciendo uso de dichas funciones, se genera el circuito completo, haciendo uso las variables faltantes como lo son la entrada $X$ y el dígito $F$. Cabe destacar que al acualizar los parámetros, también se actualizan las variables que dependen de ellas, por lo que no es necesario realizar iteraciones, ya que con los flip-flops se realizan los cambios necesarios.
 
-\vspace{0.2cm}
+\newpage
 \section{Extra}
-Para ello se toman ambos inputs (la palabra y la clave), de ser necesario se deben transformar a binario, y se hacen pasar por un circuito sumador para que así el resultado sea el caracter codificado, es importante tener en cuenta que el Carry Out es lo que se debe ignorar para simplemente para emular el módulo que se realiza en el cifrado. Finalmente, como el resultado está en binario, bastaría transformar a hexadecimal de vuelta si así se requiere.
+Para realizar esto hacemos un análisis de la tabla de verdad del flip flop jk conocida, que se incluye a continuación:
+\begin{table}[h]
+\centering
+\caption{Tabla de Verdad flip-flop JK}
+\vspace{0.2cm}
+\label{tab-jk}
+\begin{tabular}{|c|c|c|c|}
+\hline
+J & K & Estado & Estado Siguiente \\ \hline
+0 & 0 & 0      & 0                \\ \hline
+0 & 0 & 1      & 1                \\ \hline
+0 & 1 & X      & 0                \\ \hline
+1 & 0 & X      & 1                \\ \hline
+1 & 1 & 0      & 1                \\ \hline
+1 & 1 & 1      & 0                \\ \hline
+\end{tabular}
+\end{table}
+\vspace{0.2cm}
+Para reemplazar el flip-flop d buscamos los casos en que el estado se mantenga constante, por lo que inmediatamente cuando j y k son uno no nos sirve, luego vemos que si j y k son ambos cero, la salida depende del estado actual, el que no hay manera de saber exactamente el valor que toma en que momento como para poder invertirlo y no afectar la entrada jk en la siguiente iteración, por los que solo nos queda el caso en que ambos son distintos, donde nos damos cuenta que el estado siguiente es equivalente al de j, por lo que corresponde a la entrada y salida del flip flop d, entonces finalmente se podría reemplazar haciendo uso de un circuito de la forma:
+\begin{center}
+\includegraphics[width=2cm]{jk.png}
+\end{center}
+
+Es por esto que el circuito-jk que se hizo para reemplazar el anterior es simplemente agregando este tipo de puertas en el lugar de flip flop d.
 
 
 \end{document}
